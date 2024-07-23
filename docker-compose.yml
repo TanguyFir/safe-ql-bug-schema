@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+    ports:
+      - 5432:5432
